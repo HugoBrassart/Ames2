@@ -57,6 +57,7 @@ class AmeController extends Controller
         $a->couleur = request()->couleur;
         $a->sexe = request()->sexe ? true : false ;
         $a->date_de_naissance = request()->date_de_naissance;
+
         $a->save();
         return redirect('/ames');
     }
