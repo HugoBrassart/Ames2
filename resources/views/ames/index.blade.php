@@ -44,7 +44,11 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $ame->sexe ? 'femelle':'male'}}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="/ames/{{ $ame->id }}">Voir plus</a></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="/ames/{{ $ame->id }}/edit"><button>Editer</button></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="/ames/{{ $ame->id }}">Supprimer</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><form method="post" action="/ames/{{$ame->id}}">
+                                @method("DELETE")
+                                @csrf
+                                <button class="bg-black text-white rounded-lg py-3 font-semibold hover:bg-red-500 px-10">delete</button>
+                            </form></td>
                     </tr>
                     @endforeach
                     </tbody>
