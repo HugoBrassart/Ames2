@@ -26,11 +26,18 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
+    Route::get('/test-livewire', function () {
+        return view('counter-container');
+    });
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/admin', function(){
+        return view('admin.admin-panel');
+
+    })->name('administration')->middleware('is_admin');
+
 });
 
-Route::get('/test-livewire', function () {
-  return view('counter-container');
-});

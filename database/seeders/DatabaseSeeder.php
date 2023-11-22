@@ -16,15 +16,17 @@ class DatabaseSeeder extends Seeder
     {
 
         $u = new User;
-        $u -> name = 'Méline';
-        $u -> email = 'melineE@gmail.fr';
-        $u -> password = Hash::make('azerty');
+        $u -> name = 'Hugo';
+        $u -> email = 'hugobrassart@orange.fr';
+        $u -> password = Hash::make('invocation6');
+        $u->is_admin=true;
         $u->save();
 
         $u = new User;
-        $u -> name = 'Jean';
-        $u -> email = 'jeanR@gmail.fr';
-        $u -> password = Hash::make('12345');
+        $u -> name = 'Emi';
+        $u -> email = 'emilevi@gmail.com';
+        $u -> password = Hash::make('invocation6');
+        $u->is_admin=false;
         $u->save();
 
 
