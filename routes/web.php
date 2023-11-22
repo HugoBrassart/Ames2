@@ -21,14 +21,6 @@ Route::resource('ames',AmeController::class);
 
 
 
-
-
-
-
-
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -37,4 +29,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::get('/test-livewire', function () {
+  return view('counter-container');
 });

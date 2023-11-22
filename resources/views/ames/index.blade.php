@@ -37,7 +37,7 @@
                     @foreach( $ames as $ame)
                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 ">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-1 border-gray-500">{{ $ame->id }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-red-500">{{ $ame->nom }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $ame->nom }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $ame->prix }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $ame->date_de_naissance }}</td>
                         <td class="px-6 py-4"> <div class="w-6 h-6 border rounded-full" style="background-color: {{ $ame->couleur }};"></div></td>
