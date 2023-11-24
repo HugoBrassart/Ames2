@@ -19,8 +19,6 @@ Route::get('/', function () {
 
 Route::resource('ames',AmeController::class);
 
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -34,9 +32,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::get('/admin', function(){
         return view('admin.admin-panel');
-
     })->name('administration')->middleware('is_admin');
 
 });

@@ -20,7 +20,7 @@ class AmeController extends Controller
     public function update(Ame $ame){
         request()->validate([
             'prix' => 'required|integer',
-            'nom' => 'required|min:5|max:25',
+            'nom' => 'required|min:3|max:25',
             'couleur' => 'required',
             'date_de_naissance'=> 'required|date',
         ]);
@@ -30,6 +30,7 @@ class AmeController extends Controller
         $ame->couleur = request()->couleur;
         $ame->sexe = request()->sexe ? true : false ;
         $ame->date_de_naissance = request()->date_de_naissance;
+
         $ame->save();
         return redirect('/ames/'.$ame->id);
 
@@ -46,7 +47,7 @@ class AmeController extends Controller
     public function store(){
         request()->validate([
             'prix' => 'required|integer',
-            'nom' => 'required|min:5|max:25',
+            'nom' => 'required|min:3|max:25',
             'couleur' => 'required',
             'date_de_naissance'=> 'required|date',
         ]);
@@ -57,7 +58,7 @@ class AmeController extends Controller
         $a->couleur = request()->couleur;
         $a->sexe = request()->sexe ? true : false ;
         $a->date_de_naissance = request()->date_de_naissance;
-
+        $a->user_id=1;
         $a->save();
         return redirect('/ames');
     }
