@@ -9,8 +9,13 @@ use Illuminate\Support\Collection;
 class Counter extends Component
 {
     public string $nom;
-public int $prix;
+    public int $prix;
+    public string $couleur;
+    public string $date_de_naissance;
+    public int $sexe;
+    public int $user_id;
 public int $count;
+
 
 public Collection $ames;
 
@@ -20,13 +25,22 @@ public function mount(){
     $this->ames=Ame::all();
 }
 public function add(){
+    $this->validate([
+        'prix' => 'required|integer',
+        'nom' => 'required|min:3|max:25',
+        'couleur' => 'required',
+        'date_de_naissance'=> 'required|date',
+
+    ]);
+
+
     $a=new Ame();
     $a->nom=$this->nom;
     $a->prix=$this->prix;
-    $a->couleur='red';
-    $a->date_de_naissance='1976-03-11-';
-    $a->sexe=1;
-    $a->user_id=1;
+    $a->couleur=$this->couleur;
+    $a->date_de_naissance=$this->date_de_naissance;
+    $a->sexe=0;
+    $a->user_id=auth()->user()->id;
     $a->save();
     $this->ames=Ame::all()->sortByDesc('id');
 

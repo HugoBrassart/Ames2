@@ -16,9 +16,9 @@
 <tr class="px-4 ">
     <x-td >{{$ame->id}}</x-td>
     <x-td >{{$ame->nom}}</x-td>
-    <x-td>{{$ame->couleur}}</x-td>
     <x-td >{{$ame->prix}} </x-td>
     <x-td>{{$ame->date_de_naissance}}</x-td>
+    <x-td>{{$ame->couleur}}</x-td>
     <x-td>{{$ame->sexe}}</x-td>
 </tr>
 @endforeach

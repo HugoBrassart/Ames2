@@ -29,9 +29,17 @@ Route::middleware([
         return view('counter-container');
     });
 
+    Route::get('/creation-ames', function () {
+        return view('creation-ames');
+    })->name('creation-ames');
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/modification-ames', function () {
+        return view('modification-ames');
+    })->name('modification-ames');
 
     Route::get('/admin', function(){
         return view('admin.admin-panel');

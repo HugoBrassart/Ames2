@@ -3,6 +3,7 @@
 use App\Models\Ame;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Validator;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,20 @@ Route::get('/ames/{id}',function ($id){
 });
 
 Route::post('/ames',function (){
-    request()->validate([
+
+    $validator = Validator::make(request()->all(),[
         'prix' => 'required|integer',
         'nom' => 'required|min:3|max:25',
         'couleur' => 'required',
         'date_de_naissance'=> 'required|date',
     ]);
+
+    if ($validator->fails()){
+        return response()->json([
+            'message'=>$validator->messages(),
+        ],422);
+    }
+
 
     $a=new Ame();
     $a->nom = request()->nom;
@@ -43,9 +52,10 @@ Route::post('/ames',function (){
     $a->date_de_naissance = request()->date_de_naissance;
     $a->user_id=1;
     $a->save();
+    
     return response()->json([
         'message'=> 'Ame created'
-    ],201);
+    ],422);
 
 });
 
