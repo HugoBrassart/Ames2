@@ -33,16 +33,21 @@ public function add(){
 
     ]);
 
-
     $a=new Ame();
     $a->nom=$this->nom;
     $a->prix=$this->prix;
     $a->couleur=$this->couleur;
     $a->date_de_naissance=$this->date_de_naissance;
-    $a->sexe=0;
+    $a->sexe=$this->sexe;
     $a->user_id=auth()->user()->id;
     $a->save();
     $this->ames=Ame::all()->sortByDesc('id');
+
+    $this->nom=" ";
+    $this->prix=0;
+    $this->couleur=" ";
+    $this->date_de_naissance=" ";
+    $this->sexe=0;
 
 }
 public function increment(){

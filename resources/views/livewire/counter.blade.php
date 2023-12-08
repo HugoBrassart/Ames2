@@ -66,7 +66,7 @@
                         <x-td >{{$ame->prix}} </x-td>
                         <x-td>{{$ame->date_de_naissance}}</x-td>
                         <x-td>{{$ame->couleur}}</x-td>
-                        <x-td>{{$ame->sexe}}</x-td>
+                        <x-td>{{$ame->sexe ? 'Femelle' : 'Mâle'}}</x-td>
                     </tr>
                 @endforeach
             </table>

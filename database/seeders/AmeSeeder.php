@@ -20,27 +20,27 @@ class AmeSeeder extends Seeder
         $a->prix = 698;
         $a->couleur = "white";
         $a->date_de_naissance = "2002-03-15";
-        $a->image_path= '/ame_'.$cpt++.'.jpg';
+        $a->image_path= '/ame_'.$cpt++.'.png';
         $a->user_id=1;
         $a->save();
 
         $a = new Ame();
-        $a->nom ="Emrold";
+        $a->nom ="Hugo";
         $a->sexe = false;
         $a->prix = 5367;
         $a->couleur = "black";
         $a->date_de_naissance = "2002-03-26";
-        $a->image_path= '/ame_'.$cpt++.'.jpg';
+        $a->image_path= '/ame_'.$cpt++.'.png';
         $a->user_id=1;
         $a->save();
 
         $a = new Ame();
-        $a->nom ="Tibo";
+        $a->nom ="Leviath";
         $a->sexe = false;
         $a->prix = 777;
         $a->couleur = "cyan";
         $a->date_de_naissance = "1998-08-01";
-        $a->image_path= '/ame_'.$cpt++.'.jpg';
+        $a->image_path= '/ame_'.$cpt++.'.png';
         $a->user_id=1;
         $a->save();
 
@@ -50,17 +50,17 @@ class AmeSeeder extends Seeder
         $a->prix = 12700;
         $a->couleur = "pink";
         $a->date_de_naissance = "2003-06-12";
-        $a->image_path= '/ame_'.$cpt++.'.jpg';
+        $a->image_path= '/ame_'.$cpt++.'.png';
         $a->user_id=2;
         $a->save();
 
         $a = new Ame();
-        $a->nom ="Bellz";
+        $a->nom ="Deez";
         $a->sexe = false;
         $a->prix = 980;
         $a->couleur = "red";
         $a->date_de_naissance = "1666-11-23";
-        $a->image_path= '/ame_'.$cpt++.'.jpg';
+        $a->image_path= '/ame_'.$cpt++.'.png';
         $a->user_id=2;
         $a->save();
     }

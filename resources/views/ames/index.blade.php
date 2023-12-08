@@ -1,6 +1,5 @@
-@extends('layout')
-<div class="bg-gray-800 h-auto ">
-@section('main')
+<x-app-layout>
+<div class=" h-auto ">
 
 <h1 class="uppercase px-6 py-4 text-center font-medium text-xl text-red-800 "> Toutes les Âmes<a href="../ames/create">   +   </a></h1>
 <div class="flex flex-col ">
@@ -21,20 +20,20 @@
                     </thead>
                     <tbody>
                     @foreach( $ames as $ame)
-                    <tr class="bg-red-800 border-b transition duration-300 ease-in-out hover:bg-gray-600  ">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100">{{ $ame->id }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100">{{ $ame->nom }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100">{{ $ame->prix }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100">{{ $ame->date_de_naissance }}</td>
-                        <td class="px-6 py-4 border border-cyan-100"> <div class="w-6 h-6 border rounded-full" style="background-color: {{ $ame->couleur }};"></div></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100">{{ $ame->sexe ? 'femelle':'male'}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100"><a href="/ames/{{ $ame->id }}"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Voir plus</button></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100"><a href="/ames/{{ $ame->id }}/edit"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Editer</button></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-cyan-100"><form method="post" action="/ames/{{$ame->id}}">
+                    <tr class="border border-black w-12">
+                        <x-td>{{ $ame->id }}</x-td>
+                        <x-td>{{ $ame->nom }}</x-td>
+                        <x-td>{{ $ame->prix }}</x-td>
+                        <x-td>{{ $ame->date_de_naissance }}</x-td>
+                        <x-td> <div class="w-6 h-6 border rounded-full" style="background-color: {{ $ame->couleur }};"></div></x-td>
+                        <x-td>{{ $ame->sexe ? 'Femelle' : 'Mâle'}}</x-td>
+                        <x-td><a href="/ames/{{ $ame->id }}"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Voir plus</button></a></x-td>
+                        <x-td><a href="/ames/{{ $ame->id }}/edit"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Editer</button></a></x-td>
+                        <x-td><form method="post" action="/ames/{{$ame->id}}">
                                 @method("DELETE")
                                 @csrf
                                 <button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Supprimer</button>
-                            </form></td>
+                            </form></x-td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -44,6 +43,6 @@
     </div>
 </div>
 </div>
-@endsection
 
+</x-app-layout>
 

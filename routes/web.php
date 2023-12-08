@@ -37,9 +37,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/modification-ames', function () {
-        return view('modification-ames');
-    })->name('modification-ames');
+    Route::get('/modification-ames',[AmeController::class, "index"])->name('modification-ames');
 
     Route::get('/admin', function(){
         return view('admin.admin-panel');
