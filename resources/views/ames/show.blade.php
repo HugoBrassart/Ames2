@@ -9,6 +9,7 @@
                 <div class="absolute inset-0 bg-black opacity-40"></div>
 
             </div>
+
             <ul class="text-white">
                 <li><span class="font-bold text-cyan-100">ID:</span> {{ $ame->id }}</li>
                 <li><span class="font-bold text-cyan-100">Nom:</span> {{ $ame->nom }}</li>

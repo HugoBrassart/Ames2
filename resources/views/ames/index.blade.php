@@ -1,7 +1,7 @@
 <x-app-layout>
 <div class=" h-auto ">
 
-<h1 class="uppercase px-6 py-4 text-center font-medium text-xl text-red-800 "> Toutes les Âmes<a href="../ames/create">   +   </a></h1>
+<h1 class="uppercase px-6 py-4 text-center font-medium text-xl text-red-800 "> Toutes les Âmes</h1>
 <div class="flex flex-col ">
     <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -27,12 +27,12 @@
                         <x-td>{{ $ame->date_de_naissance }}</x-td>
                         <x-td> <div class="w-6 h-6 border rounded-full" style="background-color: {{ $ame->couleur }};"></div></x-td>
                         <x-td>{{ $ame->sexe ? 'Femelle' : 'Mâle'}}</x-td>
-                        <x-td><a href="/ames/{{ $ame->id }}"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Voir plus</button></a></x-td>
-                        <x-td><a href="/ames/{{ $ame->id }}/edit"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Editer</button></a></x-td>
+                        <x-td><a href="/ames/{{ $ame->id }}"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-5">Voir plus</button></a></x-td>
+                        <x-td><a href="/ames/{{ $ame->id }}/edit"><button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-5">Editer</button></a></x-td>
                         <x-td><form method="post" action="/ames/{{$ame->id}}">
                                 @method("DELETE")
                                 @csrf
-                                <button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-10">Supprimer</button>
+                                <button class="bg-gray-500 text-white rounded-lg py-3 font-semibold hover:bg-red-800 px-5">Supprimer</button>
                             </form></x-td>
                     </tr>
                     @endforeach
